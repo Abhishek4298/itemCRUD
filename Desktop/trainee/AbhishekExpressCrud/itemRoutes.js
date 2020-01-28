@@ -15,6 +15,31 @@ app.post('/create', async (req, res) => {
     console.log("error")
   }
 });
+//2. item price 
+app.post('/addprice', async (req, res) => {
+ 
+  try
+  {
+    const updatedData = itemModel.findOneAndUpdate({
+      _id: req.body.id
+    },{
+      price: 5000
+    },{
+      new:true,
+    });
+    console.log("updatedData price", updatedData)
+   
+    res.send(" price Added succesfully");
+  }
+  catch(err)
+  {
+    console.log("error")
+  }
+});
+
+
+
+
 
 //4.find item
 app.get('/search', async (req, res) => {
