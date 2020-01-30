@@ -3,10 +3,10 @@ var mongoose = require('mongoose');
 const itemSchema = new mongoose.Schema({
   
   id : {
-    type :  Number,
     required: true,
-
+    type: Number,
   },  
+
   name: {
     type: String,
     
@@ -19,8 +19,11 @@ const itemSchema = new mongoose.Schema({
   description:{
     type : String,
     lowercase: true
-  }
+  },
+  price:{
+    type:Number
 
+  }
 });
 
 const item = mongoose.model("item", itemSchema);
